@@ -1,6 +1,6 @@
 # cloud2020
 SpringCloud2020教程
 
-##### 第一步：cloud-api-common模块 mvn clean install将公共实体类安装到本地
+##### 访问http://localhost:7001 eureka注册中心地址
 
 
