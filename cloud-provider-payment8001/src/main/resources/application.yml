@@ -11,6 +11,15 @@ spring:
     username: root
     password: xsj26875676
 
+eureka:
+  client:
+    # 将自己注册进eureka中心
+    register-with-eureka: true
+    # 是否抓取注册信息，默认为true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.laoxu.springcloud.entities

@@ -14,7 +14,7 @@ eureka:
     # false表示自己端就是注册中心
     fetch-registry: false
     service-url:
-      defaultzone: http://${eureka.instance.homename}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.homename}:${server.port}/eureka
 
 
 
