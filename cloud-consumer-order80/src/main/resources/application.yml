@@ -11,4 +11,4 @@ eureka:
     # 是否抓取注册信息，默认为true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka, http://eureka7002.com:7002/eureka
