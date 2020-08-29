@@ -7,14 +7,14 @@ spring:
 
 eureka:
   instance:
-    homename: localhost
+    hostname: localhost
   client:
     # false表示不再注册中心注册自己
     register-with-eureka: false
     # false表示自己端就是注册中心
     fetch-registry: false
     service-url:
-      defaultZone: http://${eureka.instance.homename}:${server.port}/eureka
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
 
 
 
