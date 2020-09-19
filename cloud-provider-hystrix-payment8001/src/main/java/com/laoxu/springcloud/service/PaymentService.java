@@ -1,5 +1,6 @@
 package com.laoxu.springcloud.service;
 
+import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.stereotype.Service;
@@ -7,10 +8,13 @@ import org.springframework.stereotype.Service;
 import java.util.concurrent.TimeUnit;
 
 @Service
+@DefaultProperties(defaultFallback = "payment_Globle_FallbackMethod")
 public class PaymentService {
 
     //正常访问返回ok的方法
+    @HystrixCommand
     public String paymentInfo_OK(Integer id){
+        int age = 10/0;
         return "线程池：" + Thread.currentThread().getName() + "paymentInfo_OK, id:" + id + "\t" + "哈哈";
     }
 
@@ -31,5 +35,8 @@ public class PaymentService {
         return "线程池：" + Thread.currentThread().getName() + "paymentInfo_Timeout, id:" + id + "\t" + "系统繁忙！请稍后再试！！";
     }
 
-
+    //全局fallback方法
+    public String payment_Globle_FallbackMethod(){
+        return "系统繁忙！请稍后再试！！";
+    }
 }
