@@ -16,6 +16,11 @@ spring:
             - springcloud-config
       # 读取分支
       label: master
+  rabbitmq:
+    host: 47.56.236.87
+    port: 5672
+    username: admin
+    password: admin
 
 eureka:
   client:
@@ -23,11 +28,12 @@ eureka:
       defaultZone: http://eureka7001.com:7001/eureka, http://eureka7002.com:7002/eureka
 
 
-
-
-
-
-
+# rabbitmq相关配置，暴露bus刷新端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "bus-refresh"
 
 
 
