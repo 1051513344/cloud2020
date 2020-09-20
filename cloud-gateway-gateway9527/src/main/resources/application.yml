@@ -21,11 +21,6 @@ spring:
           uri: lb://cloud-payment-service    #匹配后提供服务的路由地址
           predicates:
               - Path=/payment/lb/**
-              - After=2020-09-19T21:55:08.857+08:00[Asia/Shanghai]  # 这个时间之后才能访问，【时间获取方式测试类T2.java运行获取】
-              - Cookie=username,zzyy  # 携带这个cookie才能访问
-              - Hearder=X-Request-Id, \d+  # 请求头携带这个参数且正则匹配为整数才可访问
-              - Method=GET           # GET请求方式才可访问
-              - Query=username,\d+   # 参数username为整数才可访问
 eureka:
   instance:
     hostname: cloud-gateway-service
