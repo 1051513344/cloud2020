@@ -11,6 +11,8 @@ spring:
       config:
         server-addr: localhost:8848
         file-extension: yaml # 指定yaml为配置文件后缀
+        namespace: 8980fb94-9437-47a6-ae30-63b9c8971d8f
+#        group: DEV_GROUP
 
 # ${prefix}-${spring-profile.active}.${file-extension}
 # 约定配置文件名
