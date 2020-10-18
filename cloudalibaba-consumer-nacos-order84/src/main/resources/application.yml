@@ -17,4 +17,6 @@ spring:
 service-url:
   naocs-user-service: http://nacos-payment-provider
 
-
+feign:
+  sentinel:
+    enabled: true
