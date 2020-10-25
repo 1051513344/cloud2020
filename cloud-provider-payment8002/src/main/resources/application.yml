@@ -33,5 +33,5 @@ eureka:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.laoxu.springcloud.entities
+  type-aliases-package: com.laoxu.com.laoxu.springcloud.entities
 
